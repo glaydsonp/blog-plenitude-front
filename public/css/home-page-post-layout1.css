@@ -1,0 +1,12 @@
+.home-post-layout1__wrapper {
+    display: flex;
+}
+
+.home-post-layout1__preview,
+.home-post-layout1__image {
+    width: 50%;
+}
+
+.home-post-layout1__image img {
+    width: 100%;
+}

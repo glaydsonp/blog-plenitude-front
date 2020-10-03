@@ -12,4 +12,10 @@
 */
 
 Route::get('/', "HomeController@index");
+Route::get('/categorias', function () {
+    return view('pages.categories');
+});
+Route::get('/pesquisar', function () {
+    return view('pages.search');
+});
 Route::get('/post/{id}', "PostController@show");

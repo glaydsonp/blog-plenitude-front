@@ -1,0 +1,19 @@
+.home-topnav {
+    margin: 20px 0;
+}
+
+.home-topnav__wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1140px;
+    margin: 0 auto;
+}
+
+.home-topnav__menu-wrapper {
+    display: flex;
+}
+
+.home-topnav__menu-item {
+    padding: 10px 20px;
+}
