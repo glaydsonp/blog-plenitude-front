@@ -1,4 +1,4 @@
-.home-topnav {
+/* .home-topnav {
     margin: 20px 0;
 }
 
@@ -16,4 +16,25 @@
 
 .home-topnav__menu-item {
     padding: 10px 20px;
+}
+
+.home-topnav__search img {
+    width: 75%;
+} */
+
+.home-topnav__wrapper {
+    display: flex;
+    width: 90%;
+    justify-content: space-between;
+    margin: 0 auto;
+}
+
+.home-topnav__menu {
+    width: 40%;
+}
+
+.home-topnav__menu-wrapper {
+    display: flex;
+    justify-content: space-evenly;
+    margin: 10px 0;
 }

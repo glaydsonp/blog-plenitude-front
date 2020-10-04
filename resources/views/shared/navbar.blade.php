@@ -1,4 +1,4 @@
-<nav class="home-topnav">
+<div class="home-topnav">
     <div class="home-topnav__wrapper">
         <div class="home-topnav__menu">
             <div class="home-topnav__menu-wrapper">
@@ -19,4 +19,4 @@
             </a>
         </div>
     </div>
-</nav>
+</div>

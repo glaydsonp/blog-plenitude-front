@@ -13,7 +13,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $post_collection = json_decode(file_get_contents('http://plenitudetao.com/blog-api/wp-json/wp/v2/posts?_embed'), true);
+        $post_collection = json_decode(file_get_contents('http://plenitudetao.com/blog-api/wp-json/wp/v2/posts?_embed&categories=52&page=1&per_page=4'), true);
         return view('pages.home', [
             'page_title' => 'Plenitude Tao - A sabedoria do Tao',
             'post_collection' => $post_collection

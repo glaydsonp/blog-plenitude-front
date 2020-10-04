@@ -6,6 +6,8 @@
 <link rel="stylesheet" href={{ asset('css/home.css') }}>
 <link rel='stylesheet' href={{ asset('css/home-topnav.css') }}>
 <link rel='stylesheet' href={{ asset('css/home-page-post-layout1.css') }}>
+<link rel='stylesheet' href={{ asset('css/home-page-post-layout2.css') }}>
+<link rel='stylesheet' href={{ asset('css/home-page-post-layout3.css') }}>
 @endsection
 
 @section('scripts')
@@ -14,30 +16,39 @@
 
 @section('content')
 
-{{-- loop over post array --}}
-@foreach ($post_collection as $post_details)
-
-{{-- if first item of the array --}}
-@if ($loop->first)
 @include('components.home.layout1', [
-'post_id' => $post_details["id"],
-'post_title' => $post_details["title"]["rendered"],
-'post_excerpt' => $post_details["excerpt"]["rendered"],
-'post_imagem' => $post_details["_embedded"]["wp:featuredmedia"][0]["link"],
+'post_id' => $post_collection[0]["id"],
+'post_title' => $post_collection[0]["title"]["rendered"],
+'post_excerpt' => $post_collection[0]["excerpt"]["rendered"],
+'post_imagem' => $post_collection[0]["_embedded"]["wp:featuredmedia"][0]["link"],
 ])
 
-{{-- if it's not the first item of the array --}}
-@else
+<section class="home-layout-wrapper">
+    <div class="home-layout2">
+        @include('components.home.layout2', [
+        'post_id' => $post_collection[1]["id"],
+        'post_title' => $post_collection[1]["title"]["rendered"],
+        'post_excerpt' => $post_collection[1]["excerpt"]["rendered"],
+        'post_imagem' => $post_collection[1]["_embedded"]["wp:featuredmedia"][0]["link"],
+        ])
+    </div>
 
-@include('components.post-details', [
-'post_id' => $post_details["id"],
-'post_title' => $post_details["title"]["rendered"],
-'post_imagem' => $post_details["_embedded"]["wp:featuredmedia"][0]["link"],
-])
+    <div class="home-layout3">
+        @include('components.home.layout3', [
+        'post_id' => $post_collection[2]["id"],
+        'post_title' => $post_collection[2]["title"]["rendered"],
+        'post_imagem' => $post_collection[2]["_embedded"]["wp:featuredmedia"][0]["link"],
+        ])
 
-@endif
+        @include('components.home.layout3', [
+        'post_id' => $post_collection[3]["id"],
+        'post_title' => $post_collection[3]["title"]["rendered"],
+        'post_imagem' => $post_collection[3]["_embedded"]["wp:featuredmedia"][0]["link"],
+        ])
+    </div>
+
+</section>
 
 
-@endforeach
 
 @endsection
