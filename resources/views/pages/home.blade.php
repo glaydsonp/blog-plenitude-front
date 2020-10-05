@@ -3,19 +3,21 @@
 @section('title', $page_title)
 
 @section('styles')
-<link rel="stylesheet" href={{ env('APP_ENV', 'local') ? asset('/css/home.css') : asset('public/css/home.css') }}>
+<link rel="stylesheet"
+    href={{ env('APP_ENV', 'local') == 'local' ? asset('/css/home.css') : asset('public/css/home.css') }}>
 <link rel='stylesheet'
-    href={{ env('APP_ENV', 'local') ? asset('/css/home-topnav.css') : asset('public/css/home-topnav.css') }}>
+    href={{ env('APP_ENV', 'local') == 'local' ? asset('/css/home-topnav.css') : asset('public/css/home-topnav.css') }}>
 <link rel='stylesheet'
-    href={{ env('APP_ENV', 'local') ? asset('/css/home-page-post-layout1.css') : asset('public/css/home-page-post-layout1.css') }}>
+    href={{ env('APP_ENV', 'local') == 'local' ? asset('/css/home-page-post-layout1.css') : asset('public/css/home-page-post-layout1.css') }}>
 <link rel='stylesheet'
-    href={{ env('APP_ENV', 'local') ? asset('/css/home-page-post-layout2.css') : asset('public/css/home-page-post-layout2.css') }}>
+    href={{ env('APP_ENV', 'local') == 'local' ? asset('/css/home-page-post-layout2.css') : asset('public/css/home-page-post-layout2.css') }}>
 <link rel='stylesheet'
-    href={{ env('APP_ENV', 'local') ? asset('/css/home-page-post-layout3.css') : asset('public/css/home-page-post-layout3.css') }}>
+    href={{ env('APP_ENV', 'local') == 'local' ? asset('/css/home-page-post-layout3.css') : asset('public/css/home-page-post-layout3.css') }}>
 @endsection
 
 @section('scripts')
-<script src={{ env('APP_ENV', 'local') ? asset('js/home-scripts.js') : asset('public/js/home-scripts.js') }}></script>
+<script src={{ env('APP_ENV', 'local') == 'local' ? asset('js/home-scripts.js') : asset('public/js/home-scripts.js') }}>
+</script>
 @endsection
 
 @section('content')

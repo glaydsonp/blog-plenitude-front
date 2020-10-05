@@ -15,7 +15,7 @@
         </div>
         <div class="home-topnav__search">
             <a href="/pesquisar">
-                <img src={{ env('APP_ENV', 'local') ? asset('images/icons/search-icon.png') : asset('public/images/icons/search-icon.png') }}
+                <img src={{ env('APP_ENV', 'local') == 'local' ? asset('images/icons/search-icon.png') : asset('public/images/icons/search-icon.png') }}
                     alt="Search Icon">
             </a>
         </div>
