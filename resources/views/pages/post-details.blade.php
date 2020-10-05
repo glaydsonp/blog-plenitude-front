@@ -2,6 +2,16 @@
 
 @section('title', $page_title)
 
+@section('styles')
+<link rel="stylesheet"
+    href={{ env('APP_ENV', 'local') == 'local' ? asset('/css/home.css') : asset('public/css/home.css') }}>
+@endsection
+
+@section('scripts')
+<script src={{ env('APP_ENV', 'local') == 'local' ? asset('js/home-scripts.js') : asset('public/js/home-scripts.js') }}>
+</script>
+@endsection
+
 @section('content')
 
 <p>post id = {{ $post_id }}</p>

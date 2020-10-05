@@ -7,7 +7,9 @@
 
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
+    {{-- inclui arquivo fonts.blade.php --}}
     @include('fonts')
+    {{-- inclui arquivo styles.blade.php --}}
     @include('styles')
 
     @yield('styles')
