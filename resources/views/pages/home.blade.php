@@ -3,11 +3,11 @@
 @section('title', $page_title)
 
 @section('styles')
-<link rel="stylesheet" href={{ asset('css/home.css') }}>
-<link rel='stylesheet' href={{ asset('css/home-topnav.css') }}>
-<link rel='stylesheet' href={{ asset('css/home-page-post-layout1.css') }}>
-<link rel='stylesheet' href={{ asset('css/home-page-post-layout2.css') }}>
-<link rel='stylesheet' href={{ asset('css/home-page-post-layout3.css') }}>
+<link rel="stylesheet" href={{ asset('/css/home.css') }}>
+<link rel='stylesheet' href={{ asset('/css/home-topnav.css') }}>
+<link rel='stylesheet' href={{ asset('/css/home-page-post-layout1.css') }}>
+<link rel='stylesheet' href={{ asset('/css/home-page-post-layout2.css') }}>
+<link rel='stylesheet' href={{ asset('/css/home-page-post-layout3.css') }}>
 @endsection
 
 @section('scripts')
