@@ -3,8 +3,8 @@
 @section('title', $page_title)
 
 @section('styles')
-<link rel="stylesheet"
-    href={{ env('APP_ENV', 'local') == 'local' ? asset('/css/home.css') : asset('public/css/home.css') }}>
+<link rel="stylesheet" href={{ asset('public/css/post-details.css') }}>
+<!-- href={{ env('APP_ENV', 'local') == 'local' ? asset('/css/home.css') : asset('public/css/post-details.css') }}> -->
 @endsection
 
 @section('scripts')
@@ -14,37 +14,39 @@
 
 @section('content')
 
-<p>post id = {{ $post_id }}</p>
-<p>Essa é a minha página de detalhe de post.</p>
-<p>
-    Post Title -> <br> {{ $post_details["title"]["rendered"] }}
-</p>
-<p>
-    Publish Date -> <br> {{ $post_details["date"] }}
-</p>
-<p>
-    Post Excerpt -> <br> {!! $post_details["excerpt"]["rendered"] !!}
-</p>
-<p>
-    {{-- Author Name -> <br> {{ $post_details["_embedded"]["author"][0]["name"] }} --}}
-</p>
-<p>
-    Featured Image -> <br> {{ $post_details["_embedded"]["wp:featuredmedia"][0]["link"] }}
-    <div>
-        <img style="width: 25vw" src={{ $post_details["_embedded"]["wp:featuredmedia"][0]["link"] }} alt="">
+<div class="main-img">
+    <img src={{ $post_details["_embedded"]["wp:featuredmedia"][0]["link"] }} alt="">
+</div>
+
+<div class="post-content">
+    <h5 class="title">
+        {{ $post_details["title"]["rendered"] }}
+    </h5>
+
+    <span class="publish-date">
+        Texto por {{ $post_details["_embedded"]["author"][0]["name"] }} - Atualizado em: {{ Carbon\Carbon::createFromTimestamp($post_details["modified"])->format('d-m-Y') }}
+    </span>
+
+    <div class="excerpt">
+        {!! $post_details["excerpt"]["rendered"] !!}
     </div>
-</p>
-<p>
-    @foreach ($post_details["_embedded"]["wp:term"] as $categories)
-    @foreach ($categories as $categories_nested)
-    <div>
-        {{ $categories_nested["name"] }}
+
+    <div class="post-body">
+        {!! $post_details["content"]["rendered"] !!}
     </div>
-    @endforeach
-    @endforeach
-</p>
-<p>
-    Post Body -> <br> {!! $post_details["content"]["rendered"] !!}
-</p>
+
+
+
+
+    <div class="categories">
+        @foreach ($post_details["_embedded"]["wp:term"] as $categories)
+        @foreach ($categories as $categories_nested)
+        <button class="category-button">
+            {{ $categories_nested["name"] }}
+        </button>
+        @endforeach
+        @endforeach
+    </div>
+</div>
 
 @endsection
