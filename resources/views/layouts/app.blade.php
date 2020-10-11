@@ -22,7 +22,7 @@
         @yield('content')
     </div>
 
-    @include('shared.footer')
+    <!-- @include('shared.footer') -->
 
     @include('scripts')
     @yield('scripts')

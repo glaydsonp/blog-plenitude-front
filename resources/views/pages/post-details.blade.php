@@ -3,13 +3,13 @@
 @section('title', $page_title)
 
 @section('styles')
-<link rel="stylesheet" href={{ asset('public/css/post-details.css') }}>
-<!-- href={{ env('APP_ENV', 'local') == 'local' ? asset('/css/home.css') : asset('public/css/post-details.css') }}> -->
+<link rel="stylesheet" href={{ asset('public/css/post-details.css?v=').time() }}>
+<!-- <link rel="stylesheet" href={{ env('APP_ENV', 'local') == 'local' ? asset('public/css/post-details.css') : asset('public/css/post-details.css') }}> -->
 @endsection
 
 @section('scripts')
-<script src={{ env('APP_ENV', 'local') == 'local' ? asset('js/home-scripts.js') : asset('public/js/home-scripts.js') }}>
-</script>
+<!-- <script src={{ env('APP_ENV', 'local') == 'local' ? asset('js/home-scripts.js') : asset('public/js/home-scripts.js') }}>
+</script> -->
 @endsection
 
 @section('content')
@@ -46,6 +46,21 @@
         </button>
         @endforeach
         @endforeach
+    </div>
+
+    <div class="share">
+        <span>Compartilhe</span>
+        <div class="share__items">
+            <button>
+                <img src={{ asset('public/images/icons/linkedin.svg') }} alt="linkedin">
+            </button>
+            <button>
+                <img src={{ asset('public/images/icons/facebook.svg') }} alt="facebook">
+            </button>
+            <button>
+                <img src={{ asset('public/images/icons/instagram.svg') }} alt="instagram">
+            </button>
+        </div>
     </div>
 </div>
 
