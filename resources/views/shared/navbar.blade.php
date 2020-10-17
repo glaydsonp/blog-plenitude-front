@@ -17,7 +17,7 @@
                     <img src={{ asset('public/images/logo-sidebar.svg') }} alt="logo">
                 </div>
                 <div class="home-topnav__menu-item">
-                    <a href="/">Início</a>
+                    <a href="http://blog.plenitudetao.com/">Início</a>
                 </div>
                 <div class="home-topnav__menu-item">
                     <a href="./categorias">Categorias</a>
