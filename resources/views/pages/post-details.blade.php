@@ -3,7 +3,8 @@
 @section('title', $page_title)
 
 @section('styles')
-<link rel="stylesheet" href={{ asset('public/css/post-details.css?v=').time() }}>
+<link rel="stylesheet"
+    href={{ env('APP_ENV', 'local') == 'local' ? asset('css/post-details.css?v=').time() : asset('public/css/post-details.css?v=').time() }}>
 <!-- <link rel="stylesheet" href={{ env('APP_ENV', 'local') == 'local' ? asset('public/css/post-details.css') : asset('public/css/post-details.css') }}> -->
 @endsection
 
@@ -24,7 +25,9 @@
     </h5>
 
     <span class="publish-date">
-        Texto por {{ $post_details["_embedded"]["author"][0]["name"] }} - Atualizado em: {{ Carbon\Carbon::createFromTimestamp($post_details["modified"])->format('d-m-Y') }}
+        Texto por {{ $post_details["_embedded"]["author"][0]["name"] }} - Atualizado em:
+        {{-- {{ Carbon\Carbon::createFromTimestamp($post_details["modified"])->format('d-m-Y') }} --}}
+        {{ date("d-m-Y", strtotime($post_details["modified"])) }}
     </span>
 
     <div class="excerpt">
@@ -52,13 +55,16 @@
         <span>Compartilhe</span>
         <div class="share__items">
             <button>
-                <img src={{ asset('public/images/icons/linkedin.svg') }} alt="linkedin">
+                <img src={{ env('APP_ENV', 'local') == 'local' ? asset('images/icons/linkedin.svg') : asset('public/images/icons/linkedin.svg') }}
+                    alt="linkedin">
             </button>
             <button>
-                <img src={{ asset('public/images/icons/facebook.svg') }} alt="facebook">
+                <img src={{ env('APP_ENV', 'local') == 'local' ? asset('images/icons/facebook.svg') : asset('public/images/icons/facebook.svg') }}
+                    alt="facebook">
             </button>
             <button>
-                <img src={{ asset('public/images/icons/instagram.svg') }} alt="instagram">
+                <img src={{ env('APP_ENV', 'local') == 'local' ? asset('images/icons/instagram.svg') : asset('public/images/icons/instagram.svg') }}
+                    alt="instagram">
             </button>
         </div>
     </div>

@@ -29,10 +29,10 @@
         </div>
         <div class="home-topnav__search">
             <a href="/pesquisar">
-                <!-- <img src={{ env('APP_ENV', 'local') == 'local' ? asset('images/icons/search-icon.png') : asset('public/images/icons/search-icon.png') }}
-                    alt="Search Icon"> -->
+                <img src={{ env('APP_ENV', 'local') == 'local' ? asset('images/icons/search-icon.png') : asset('public/images/icons/search-icon.png') }}
+                    alt="Search Icon">
 
-                <img height="47" width="45" src={{ asset('public/images/icons/search-icon.png') }}>
+                {{-- <img height="47" width="45" src={{ asset('public/images/icons/search-icon.png') }}> --}}
             </a>
         </div>
     </div>

@@ -9,11 +9,14 @@
 <link rel='stylesheet' href={{ env('APP_ENV', 'local') == 'local' ? asset('/css/home-page-post-layout2.css') : asset('public/css/home-page-post-layout2.css') }}>
 <link rel='stylesheet' href={{ env('APP_ENV', 'local') == 'local' ? asset('/css/home-page-post-layout3.css') : asset('public/css/home-page-post-layout3.css') }}> -->
 
-<link rel="stylesheet" href={{ asset('public/css/home.css?v=').time() }}>
-<link rel="stylesheet" href={{ asset('public/css/home-topnav.css?v=').time() }}>
-<link rel="stylesheet" href={{ asset('public/css/home-page-post-layout1.css?v=').time() }}>
-<link rel="stylesheet" href={{ asset('public/css/home-page-post-layout2.css?v=').time() }}>
-<link rel="stylesheet" href={{ asset('public/css/home-page-post-layout3.css?v=').time() }}>
+<link rel="stylesheet"
+    href={{ env('APP_ENV', 'local') == 'local' ? asset('css/home.css?v=').time() :asset('public/css/home.css?v=').time() }}>
+<link rel="stylesheet"
+    href={{ env('APP_ENV', 'local') == 'local' ? asset('css/home-page-post-layout1.css?v=').time() :asset('public/css/home-page-post-layout1.css?v=').time() }}>
+<link rel="stylesheet"
+    href={{ env('APP_ENV', 'local') == 'local' ? asset('css/home-page-post-layout2.css?v=').time() :asset('public/css/home-page-post-layout2.css?v=').time() }}>
+<link rel="stylesheet"
+    href={{ env('APP_ENV', 'local') == 'local' ? asset('css/home-page-post-layout3.css?v=').time() :asset('public/css/home-page-post-layout3.css?v=').time() }}>
 
 @endsection
 
