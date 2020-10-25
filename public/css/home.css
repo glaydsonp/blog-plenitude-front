@@ -58,3 +58,66 @@ body {
         width: 48%;
     }
 }
+
+/* .home__outros-assuntos{
+    margin-top: 5rem;
+} */
+
+.home__outros-assuntos__wrapper {
+    overflow-x: scroll;
+}
+
+.home__outros-assuntos__content {
+    display: flex;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.home__outros-assuntos__content::-webkit-scrollbar,
+.home__outros-assuntos__wrapper::-webkit-scrollbar {
+    display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.home__outros-assuntos__content,
+.home__outros-assuntos__wrapper {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+}
+
+.other-topics {
+    margin-right: 2rem;
+}
+
+.other-topics__image {
+    width: 400px;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.other-topics__image > img {
+    object-fit: contain;
+    width: 100%;
+}
+
+.other-topics > p {
+    text-transform: uppercase;
+    font-family: "Open Sans";
+    color: #a0a0a0;
+    font-style: normal;
+    font-weight: 300;
+}
+
+footer.footer__homepage {
+    position: absolute;
+    background-image: url(/images/background-bottom.svg);
+    width: 100%;
+    top: 107vh;
+    height: 400px;
+    left: 0;
+    z-index: -1;
+    background-repeat-y: no-repeat;
+    background-size: cover;
+}
+
+.footer__content {
+}

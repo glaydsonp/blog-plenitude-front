@@ -60,6 +60,27 @@
         </div>
 
     </section>
+
+    <section class="home__outros-assuntos">
+        <div class="home__outros-assuntos__wrapper">
+            <div class="home__outros-assuntos__content">
+                @foreach ($post_categories as $post_category)
+                @if ($post_category->id != 1)
+                @include('components.home.other-topics-item', [
+                'category_id' => $post_category->id,
+                'category_title' => $post_category->name,
+                'category_imagem' => $post_categories_photos[$loop->index],
+                ])
+                @endif
+                @endforeach
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer__homepage">
+        <div class="footer__content">
+        </div>
+    </footer>
 </div>
 
 @endsection
