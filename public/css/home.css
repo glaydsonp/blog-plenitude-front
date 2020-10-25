@@ -109,7 +109,7 @@ body {
 
 footer.footer__homepage {
     position: absolute;
-    background-image: url(/images/background-bottom.svg);
+    background-image: url(/public/images/background-bottom.svg);
     width: 100%;
     top: 107vh;
     height: 400px;
