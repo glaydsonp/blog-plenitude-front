@@ -3,17 +3,17 @@
         <div class="home-post-layout3__preview">
             <div class="home-post-layout3__post-wrapper">
                 <div class="home-post-layout3__post-title">
-                    {{ $post_title }}
+                    {{ $card_title }}
                 </div>
                 <div class="home-post-layout3__post-more">
-                    <a href={{ '/post/' . $post_id }}>
+                    <a href={{ '/categorias/' . $card_id }}>
                         Saiba mais
                     </a>
                 </div>
             </div>
         </div>
         <div class="home-post-layout3__image">
-            <img src={{ $post_imagem }} alt={{ $post_title }}>
+            <img src={{ $card_imagem }} alt={{ $card_title }}>
         </div>
     </div>
 </div>

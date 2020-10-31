@@ -7,6 +7,8 @@
 
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
+    @yield('header-seo')
+
     {{-- inclui arquivo fonts.blade.php --}}
     @include('fonts')
     {{-- inclui arquivo styles.blade.php --}}

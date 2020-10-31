@@ -6,6 +6,7 @@
 
 body {
     margin: 0;
+    overflow-x: hidden;
 }
 
 .home-posts {
@@ -90,6 +91,7 @@ body {
 
 .other-topics__image {
     width: 400px;
+    height: 240px;
     overflow: hidden;
     border-radius: 10px;
 }
@@ -99,7 +101,7 @@ body {
     width: 100%;
 }
 
-.other-topics > p {
+.other-topics__title {
     text-transform: uppercase;
     font-family: "Open Sans";
     color: #a0a0a0;
@@ -109,13 +111,18 @@ body {
 
 footer.footer__homepage {
     position: absolute;
-    background-image: url(/public/images/background-bottom.svg);
-    width: 100%;
-    top: 107vh;
-    height: 400px;
     left: 0;
+}
+
+.footer__wrapper {
+    position: absolute;
+    background-image: url(/public/images/background-bottom.svg);
+    width: 100vw;
+    bottom: -2vh;
+    height: 400px;
+    left: 0vw;
     z-index: -1;
-    background-repeat-y: no-repeat;
+    background-repeat: repeat-x;
     background-size: cover;
 }
 

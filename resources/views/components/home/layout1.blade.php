@@ -9,7 +9,7 @@
                     {!! $post_excerpt !!}
                 </div>
                 <div class="home-post-layout1__post-more">
-                    <a href={{ './post/' . $post_id }}>
+                    <a href={{ '/post/' . $post_id }}>
                         Saiba mais
                     </a>
                 </div>

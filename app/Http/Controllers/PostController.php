@@ -47,9 +47,12 @@ class PostController extends Controller
     {
         $post_data = json_decode(file_get_contents('http://plenitudetao.com/blog-api/wp-json/wp/v2/posts/' . $id . '?_embed'), true);
 
+        $header_seo = utf8_encode($post_data["yoast_head"]);
+
         return view('pages.post-details', [
-            'page_title' => 'Plenitude Tao - A sabedoria do Tao',
+            'page_title' => 'Plenitude Tao',
             'post_id' => $id,
+            'header_seo' => $header_seo,
             'post_details' => $post_data
         ]);
     }

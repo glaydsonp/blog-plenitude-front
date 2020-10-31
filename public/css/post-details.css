@@ -13,20 +13,19 @@ img {
 
 .main-img {
     width: 100%;
+    height: 100%;
+    max-height: 300px;
 }
 
 .main-img img {
     width: 100%;
-    height: 550px;
-
+    height: 100%;
     object-fit: cover;
-    object-position: 0 -313px;
 }
 
 .post-content {
     max-width: 1440px;
     margin: auto;
-
     padding: 0 80px 50px 80px;
 }
 
@@ -145,17 +144,5 @@ img {
     .share__items button img {
         height: 100px;
         width: 100px;
-    }
-}
-
-@media (min-width: 1441px) {
-    .main-img img {
-        object-position: 0 -513px;
-    }
-}
-
-@media (min-width: 1921px) {
-    .main-img img {
-        object-position: 0 -913px;
     }
 }

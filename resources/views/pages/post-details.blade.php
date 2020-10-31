@@ -1,8 +1,9 @@
 @extends('layouts.app')
 
-@section('title', $page_title)
+@section('title', $page_title." | ".$post_details["title"]["rendered"])
 
 @section('styles')
+{{-- {{ utf8_encode($post_details["yoast_head"]) }} --}}
 <link rel="stylesheet"
     href={{ env('APP_ENV', 'local') == 'local' ? asset('css/post-details.css?v=').time() : asset('public/css/post-details.css?v=').time() }}>
 <!-- <link rel="stylesheet" href={{ env('APP_ENV', 'local') == 'local' ? asset('public/css/post-details.css') : asset('public/css/post-details.css') }}> -->

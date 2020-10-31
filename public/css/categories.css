@@ -1,0 +1,39 @@
+.categories__wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: flex-start;
+}
+
+.categories__item {
+    height: 650px;
+}
+
+/* .categories__item:nth-child(odd) {
+    background-color: blue;
+}
+
+.categories__item:nth-child(even) {
+    background-color: red;
+} */
+
+.home-post-layout3__post-title {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.categories {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+@media (min-width: 1100px) {
+    .home-post-layout3 {
+        width: 48%;
+    }
+
+    .categories__item {
+        width: 45%;
+        height: 650px;
+    }
+}

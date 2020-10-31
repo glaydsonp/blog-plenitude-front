@@ -1,3 +1,4 @@
+{{-- {{ dd($_SERVER["SERVER_NAME"].'/post/' . $post_id) }} --}}
 <div class="home-post-layout2">
     <div class="home-post-layout2__wrapper">
         <div class="home-post-layout2__image">
@@ -9,7 +10,7 @@
                     {!! $post_excerpt !!}
                 </div>
                 <div class="home-post-layout2__post-more">
-                    <a href={{ './post/' . $post_id }}>
+                    <a href={{ '/post/' . $post_id }}>
                         Saiba mais
                     </a>
                 </div>

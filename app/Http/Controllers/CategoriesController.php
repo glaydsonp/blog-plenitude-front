@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class HomeController extends Controller
+class CategoriesController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,7 +13,8 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $post_collection = json_decode(file_get_contents('http://plenitudetao.com/blog-api/wp-json/wp/v2/posts?_embed&categories=52&page=1&per_page=4'), true);
+        // listar todas as categorias
+
         $post_categories_response = json_decode(file_get_contents('http://plenitudetao.com/blog-api/wp-json/wp/v2/categories', true));
 
         $post_categories = $this->filterUnwantedCategories($post_categories_response);
@@ -29,11 +30,29 @@ class HomeController extends Controller
             '/public/images/tqc.jpg',
         ];
 
-        return view('pages.home', [
+        return view('pages.categories', [
             'page_title' => 'Plenitude Tao - A sabedoria do Tao',
-            'post_collection' => $post_collection,
             'post_categories' => $post_categories,
             'post_categories_photos' => $post_categories_photos
+        ]);
+    }
+
+    /**
+     * Display the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function show($id)
+    {
+        // listar os posts de uma categoria
+        // http://plenitudetao.com/blog-api/wp-json/wp/v2/posts?categories=8
+        $post_collection = json_decode(file_get_contents('http://plenitudetao.com/blog-api/wp-json/wp/v2/posts?categories=' . $id . '&_embed'), true);
+        $page_title = 'Plenitude Tao - A sabedoria do Tao';
+        return view('pages.posts-by-category', [
+            'id' => $id,
+            'post_collection' => $post_collection,
+            'page_title' => $page_title
         ]);
     }
 
