@@ -27,6 +27,13 @@
     justify-content: space-between;
 }
 
+@media (max-width: 1099px) {
+    .categories__item {
+        height: auto;
+        margin-top: 4rem;
+    }
+}
+
 @media (min-width: 1100px) {
     .home-post-layout3 {
         width: 48%;
